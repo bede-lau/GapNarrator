@@ -1,0 +1,134 @@
+# Ignore virtual environments
+.venv/
+venv/
+env/
+__pycache__/
+*.pyc
+
+# Ignore node_modules from any directory
+node_modules/
+
+# Ignore Next.js build artifacts
+.next/
+out/
+frontend/build
+frontend/coverage
+
+# Ignore environment files
+.env
+.env.local
+.env.development
+.env.test
+.env.production
+frontend/.env*
+
+# Ignore IDE specific files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Ignore OS files
+.DS_Store
+Thumbs.db
+
+# Ignore local database files (if any)
+*.db
+*.sqlite3
+
+# Ignore temporary/log files
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# Frontend-specific
+*.pem
+*.tsbuildinfo
+frontend/next-env.d.ts
+.vercel
+frontend/.pnp
+frontend/.pnp.*
+frontend/.yarn/*
+!frontend/.yarn/patches
+!frontend/.yarn/plugins
+!frontend/.yarn/releases
+!frontend/.yarn/versions
+
+# Ignore screenshots
+screenshots/
+
+# Ignore ephemeral batch-ingest task tracking
+data/ingest_batch_tasks.json
+
+# Ignore processed dataset intermediaries and calibration working notes
+data/datasets/
+data/sme_calibration/
+
+
+# Ignore simulation data and reports
+data/reports/
+data/simulations/
+
+# Ignore raw dataset downloads (CSVs, hundreds of MB — see datasets/MANUAL_TASKS.md to re-download)
+datasets/raw/
+
+# Ignore gold set extractor outputs (reproducible — re-run extractor on gold sources)
+data/gold_set/v1/extractor_outputs_*/
+
+# Heavy generated/cached data (regeneratable — never commit)
+data/cold_start/
+data/checkpoints/
+data/embeddings/
+data/personas/
+data/calibration_vignettes/
+
+# Phase 1 — Social Signals
+data/scrapes/
+.secrets/cookies/
+
+# Local Claude Code / agent state
+
+
+.uploads/
+
+
+# Local audit reports (generated)
+audit/
+
+# Local research notes / scratch
+new_resources/
+
+
+# One-off / patch scripts (not source)
+link.py
+patch_router.py
+migrate_lexicon.py
+fetch_html.js
+test_llm.py
+ig_creator_handles.csv
+smoke.txt
+smoke_out.txt
+
+# Heavy landing-page video assets (>50MB — host via CDN, not git)
+frontend/public/assets/video/*.mp4
+
+# Screenshots (local artifacts)
+
+
+# Celery runtime state
+celerybeat-schedule
+celerybeat-schedule.*
+
+# Misc local state
+*.bak
+*.tmp
+.cache/
+scratch/
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+backup/
+evals/results/*.json
