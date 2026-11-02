@@ -1,4 +1,20 @@
-# GapNarrator
+<h1 align="center">GapNarrator</h1>
+<p align="center"><b>Timed audio-description production for accessible video.</b></p>
+
+## ▍At a glance
+
+```mermaid
+flowchart LR
+ A["Dialogue clip + silent gap"] --> B["Candidate description"]
+ B --> C["Timing comparison"]
+ C --> D["Before / after playback"]
+ B -. "optional server-side rewrite" .-> E["Compression API"]
+ D -. "optional voice" .-> F["TTS API"]
+```
+
+The bundled demo runs without a key, using fixed candidates and browser speech synthesis.
+
+---
 
 Timed audio-description tracks that fit between dialogue.
 
