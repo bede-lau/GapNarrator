@@ -39,29 +39,17 @@ The speech-duration estimate is an estimate, not a guarantee of actual spoken du
 
 ## Demo
 
-The app now includes three public-domain dialogue clips:
+The configured scenarios in [`src/data/demoScenario.ts`](src/data/demoScenario.ts) are:
 
-- `The Tape Recorder`: 3.0s gap, fixed line `"He starts the tape."`
-- `The Phone Recording`: 3.0s gap, fixed line `"The reel turns."`
-- `The Evidence Cue`: 3.0s gap, fixed line `"He cues the tape."`
+| Scenario | Visual action | Fitted example |
+| --- | --- | --- |
+| **Station Approach** | A traveler hurries through a station. | “She hurries across the station.” |
+| **Snack Machine** | The traveler studies a snack machine. | “She eyes the snack machine.” |
+| **Evidence Cue** | An officer cues recording equipment. | “He cues the tape.” |
 
-Each demo shows a long naive line that overlaps dialogue, then a compressed timed audio-description track that fits.
+Station and Snack use user-provided reference clips and committed base/fixed video files. Evidence Cue uses a clip from [*Dragnet: The Big Phone Call*](https://archive.org/details/Dragnet_The_Big_Phone_Call), identified in the scenario data as public domain. Confirm the rights for any footage before reuse.
 
-## Video Source
-
-All clips are trimmed from the public-domain Dragnet episode "The Big Phone Call":
-
-```txt
-https://archive.org/details/Dragnet_The_Big_Phone_Call
-```
-
-Local files:
-
-```txt
-public/demo/demo-tape-recorder.mp4
-public/demo/demo-phone-recording.mp4
-public/demo/demo-evidence-cue.mp4
-```
+Each scenario compares a longer description with a timed alternative. The configured dialogue timings are demonstration inputs; check the audible result before reuse.
 
 ## OpenAI Key
 
