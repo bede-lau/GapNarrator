@@ -20,6 +20,23 @@ Timed audio-description tracks that fit between dialogue.
 
 GapNarrator is a demo webapp for the accessibility production problem that a correct audio description can still fail if it cannot be spoken inside the available silent gap.
 
+## ▍The scheduling pipeline
+
+A visual event needs a description, but that description has to fit the time left between spoken lines. GapNarrator models the timing explicitly: it derives silent gaps from dialogue segments, evaluates candidate narration against a gap, then compares the naïve and fitted schedules.
+
+| Module | Responsibility |
+| --- | --- |
+| [`src/data/demoScenario.ts`](src/data/demoScenario.ts) | Bundled scenarios, dialogue and event data |
+| [`src/lib/timeline.ts`](src/lib/timeline.ts) | Derives silent gaps and finds candidate gaps for an event |
+| [`src/lib/narration.ts`](src/lib/narration.ts) | Estimates speech duration, checks fit and chooses candidates |
+| [`src/lib/audioScheduler.ts`](src/lib/audioScheduler.ts) | Builds and scores naïve and fitted schedules |
+| [`src/lib/scoring.ts`](src/lib/scoring.ts) | Scores narration against the scenario |
+| `src/app/api/` | Optional server-side analysis, compression and speech routes |
+
+The speech-duration estimate is an estimate, not a guarantee of actual spoken duration. Listen to the preview and review the timing before treating a track as finished.
+
+---
+
 ## Demo
 
 The app now includes three public-domain dialogue clips:
